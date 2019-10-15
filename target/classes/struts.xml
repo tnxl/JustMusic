@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+	"http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+<!--	<constant name="struts.enable.DynamicMethodInvocation" value="true" />-->
+<!--	<constant name="struts.action.extension" value="action"/>-->
+	<package name="default" extends="struts-default">
+		<action name="login" class="userAction">
+			<result name="success">login_success.jsp</result>
+			<result name="error">login.jsp</result>
+		</action>
+		<action name="register" class="userAction" method="register">
+			<result name="success">register_success.jsp</result>
+		</action>
+		<action name="logout" class="userAction" method="logout">
+			<result name="success">index.jsp</result>
+		</action>
+		<action name="browseCatalog" class="bookAction" method="browseCatalog">
+			<result name="success">menu.jsp</result>
+		</action>
+		<action name="browseBook" class="bookAction" method="browseBook">
+			<result name="success">browseBook.jsp</result>
+		</action>
+		<action name="browseBookPaging" class="bookAction" method="browseBookPaging">
+			<result name="success">browseBookPaging.jsp</result>
+		</action>
+		<action name="searchBook" class="bookAction" method="searchBook">
+			<result name="success">searchBook_result.jsp</result>
+		</action>
+		<action name="addToCart" class="shoppingAction" method="addToCart">
+			<result name="success">addToCart_success.jsp</result>
+		</action>
+		<action name="updateCart" class="shoppingAction" method="updateCart">
+			<result name="success">update.jsp</result>
+		</action>
+		<action name="delToCart" class="shoppingAction" method="delToCart">
+			<result name="success">showCart.jsp</result>
+		</action>
+		<action name="manageBook" class="managerAction">
+			<result name="success">shangpin.jsp</result>
+		</action>
+<!--		<action name="jumpManger" class="managerAction" method="jump">-->
+<!--			<result>shangpin.jsp</result>-->
+<!--		</action>-->
+		<action name="checkout" class="checkAction" method="execute">
+			<result name="success">dingdan.jsp</result>
+		</action>
+		<action name="mod" class="modAction">
+			<result name="success">shangpin.jsp</result>
+		</action>
+		<action name="update" class="updateAction">
+			<result name="success">jump.jsp</result>
+		</action>
+		<action name="modify" class="modifyAction">
+			<result name="success">modefiyShangpin.jsp</result>
+		</action>
+	</package>
+
+</struts>
